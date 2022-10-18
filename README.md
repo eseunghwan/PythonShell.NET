@@ -52,8 +52,8 @@ shell.RunString(
             // if `echo` is `true`, log to console automatically
             Console.WriteLine("message!");
         },
-        OnError =  (e, s) {
-            Console.WriteLine("error!");
+        OnError =  (e) {
+            Console.WriteLine(e.Data);
         },
         OnComplete = () {
             Console.WriteLine("complete!");
