@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net5.0;net6.0</TargetFrameworks>
+        <Nullable>enable</Nullable>
+
+        <AssemblyName>PythonShell</AssemblyName>
+        <OutputPath>build</OutputPath>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <PackageId>PythonShell.NET</PackageId>
+        <Version>0.0.1</Version>
+        <Authors>eseunghwan</Authors>
+        <Company>Integrated.Design.Division</Company>
+    </PropertyGroup>
+
+</Project>
