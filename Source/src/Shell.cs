@@ -66,7 +66,7 @@ namespace PythonShell {
             String pythonToRun;
             String instanceDir = "";
             if (useInstance) {
-                var instanceMap = instanceName == null ? Utils.Util.CreateShellInstance(this.Config, instanceName) : Utils.Util.GetShellInstance(this.Config, instanceName);
+                var instanceMap = instanceName == null ? Utils.Util.CreateShellInstance(this.Config, instanceName, echo: echo) : Utils.Util.GetShellInstance(this.Config, instanceName, echo: echo);
                 pythonToRun = instanceMap.Python;
                 instanceDir = instanceMap.Dir;
             }
@@ -79,7 +79,7 @@ namespace PythonShell {
                     FileName = pythonToRun,
                     ArgumentList = { "-u", Path.GetFullPath(pythonFile) },
                     WorkingDirectory = this.Config.DefaultWorkingDirectory ?? workingDirectory!,
-                    UseShellExecute = true, WindowStyle = ProcessWindowStyle.Hidden
+                    UseShellExecute = false
                 }
             }!;
             Int32 processId = Int32.MaxValue;

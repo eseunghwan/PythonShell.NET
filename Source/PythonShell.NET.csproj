@@ -12,7 +12,7 @@
 
     <PropertyGroup>
         <PackageId>PythonShell.NET</PackageId>
-        <Version>0.0.1</Version>
+        <Version>0.0.2</Version>
         <Authors>eseunghwan</Authors>
         <Company>Integrated.Design.Division</Company>
     </PropertyGroup>
