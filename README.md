@@ -31,13 +31,27 @@ nuget package is not available not
 # Usage
 - basic usage
 ```c#
-using PythonShell;
 using PythonShell.Listener;
+using PythonShell.Shell;
 
-var shell = PythonShell();
+var shell = new PythonShell.PythonShell(
+    new PythonShell.PythonShellConfig()
+);
 await shell.Initialize();
 
 shell.RunString("{pythonCode}");
+```
+- use instance
+```c#
+using PythonShell.Listener;
+using PythonShell.Shell;
+
+new PythonShell.PythonShell(
+    new PythonShell.PythonShellConfig()
+).Initialize();
+
+var instance = ShellManager.GetInstance("default");
+instance.RunString("{pythonCode}");
 ```
 
 <br />
@@ -64,4 +78,4 @@ shell.RunString(
 
 <br />
 
-for further informations, refers to [Shell.cs](https://github.com/eseunghwan/PythonShell.NET/blob/master/Source/src/Shell.cs)
+for further informations, refers to [PythonShell.cs](https://github.com/eseunghwan/PythonShell.NET/blob/master/Source/src/PythonShell.cs)
