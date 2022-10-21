@@ -9,7 +9,12 @@
 
 <br />
 
-## 0.0.3
+## 0.0.3(Deprecated), 0.0.4
 - change directionality of library.
 - add 'ShellManager', 'ShellInstance'.
 - update 'README.md'
+
+## 0.0.5
+- add Exceptions.
+- add 'README.md' to nuget package.
+- add github url to nuget package.

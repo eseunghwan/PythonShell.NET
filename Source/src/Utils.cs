@@ -20,7 +20,7 @@ namespace PythonShell {
             }
         }
 
-        public static Process RunSettingCmd(String pythonToRun, String[] arguments) {
+        public static Process RunSettingCmd(String pythonToRun, String[] arguments, DataReceivedEventHandler? onError = null) {
             var process = new Process {
                 StartInfo = new ProcessStartInfo {
                     FileName = pythonToRun,
@@ -30,6 +30,7 @@ namespace PythonShell {
                 }
             }!;
 
+            process.ErrorDataReceived += onError;
             process.Start();
             process.WaitForExit();
 

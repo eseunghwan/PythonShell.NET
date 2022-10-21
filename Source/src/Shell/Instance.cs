@@ -27,7 +27,7 @@ namespace PythonShell.Shell {
             }
 
             if (echo) Console.WriteLine("Installing requirements...");
-            Util.RunSettingCmd(this.PythonPath!, new String[] { "-m", "pip", "install", "-r", pythonRequireFile });
+            Util.RunSettingCmd(this.PythonPath!, new String[] { "-m", "pip", "install", "-r", pythonRequireFile }, (s, e) => { throw new Exceptions.InstallRequireFailedException(e.Data!); });
             if (echo) Console.WriteLine("Requirements installed.");
         }
 
@@ -51,6 +51,7 @@ namespace PythonShell.Shell {
             };
             process.ErrorDataReceived += (s, e) => {
                 newListener.OnError!(e);
+                throw new Exceptions.RunFailedException(e.Data!);
             };
             process.Exited += (s, e) => {
                 newListener.OnComplete!();
