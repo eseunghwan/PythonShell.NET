@@ -24,7 +24,9 @@ Supported Platforms:
 <br />
 
 # Install
-nuget package is not available not
+```zsh
+dotnet add package PythonShell.NET
+```
 
 <br /><br />
 
