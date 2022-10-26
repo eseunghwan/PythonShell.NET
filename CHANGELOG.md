@@ -14,7 +14,15 @@
 - add 'ShellManager', 'ShellInstance'.
 - update 'README.md'
 
+<br />
+
 ## 0.0.5
 - add Exceptions.
 - add 'README.md' to nuget package.
 - add github url to nuget package.
+
+<br />
+
+## 0.0.5-rc1
+- Fix missing default parameters of 'RunString'.
+- Delete unnecessary codes. 

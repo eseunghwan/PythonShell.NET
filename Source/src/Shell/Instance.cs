@@ -60,7 +60,7 @@ namespace PythonShell.Shell {
             await process.WaitForExitAsync();
         }
 
-        public async Task RunString(String pythonCode, String? workingDirectory, Listener.ShellListener? listener, Boolean echo = true) {
+        public async Task RunString(String pythonCode, String? workingDirectory = null, Listener.ShellListener? listener = null, Boolean echo = true) {
             Listener.ShellListener newListener = listener ?? new Listener.ShellListener();
             
             String tempPythonFile = Path.Join(this.TempDir, $"{DateTime.Now.ToString("yyyy.MM.dd.HH.mm.ss")}.py");

@@ -4,8 +4,6 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Linq;
 using System.IO.Compression;
-using System.Diagnostics;
-using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
 
@@ -13,18 +11,6 @@ namespace PythonShell {
     public class PythonShellConfig {
         public String DefaultPythonPath { get; set; } = "python3";
         public String DefaultPythonVersion { get; set; } = "3.9.13";
-        // public String? DefaultWorkingDirectory { get; set; } = null;
-        // public String? PythonRequireFile { get; set; } = null;
-        // public String[]? PythonRequires { get; set; } = null;
-
-        // internal String? AppDir { get; set; } = null;
-        // internal String TempDir {
-        //     get => Path.Join(AppDir, "temp");
-        // }
-        // internal String InstanceDir {
-        //     get => Path.Join(AppDir, "instances");
-        // }
-        // internal String? DefaultPythonEnvPath { get; set; } = null;
 
         public PythonShellConfig() {
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux) || RuntimeInformation.IsOSPlatform(OSPlatform.OSX)) {
@@ -35,10 +21,6 @@ namespace PythonShell {
                     this.DefaultPythonPath = "/usr/bin/python3";
                 }
             }
-
-            // if (this.DefaultWorkingDirectory != null) {
-            //     this.DefaultWorkingDirectory = Path.GetFullPath(this.DefaultWorkingDirectory);
-            // }
         }
     }
 
